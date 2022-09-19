@@ -2,7 +2,7 @@
   <div class="animated-number">
     <span
       class="animated-number__integer-part"
-      :style="{ '--number': this.animatedNumber }"
+      :style="{ '--number': animatedNumber, '--transition': transition }"
     />
 
     <span
@@ -13,7 +13,7 @@
     <span
       v-if="precision > 0"
       class="animated-number__decimal-part"
-      :style="{ '--decimal': this.decimalPart }"
+      :style="{ '--decimal': decimalPart, '--transition': transition }"
     />
 
     <slot />
@@ -116,7 +116,7 @@ export default {
   .animated-number__integer-part {
     --integer-part: max(var(--number) - 0.5, 0);
 
-    transition: --number v-bind(transition);
+    transition: --number var(--transition);
 
     counter-reset: integer-part var(--integer-part);
 
@@ -128,7 +128,7 @@ export default {
   .animated-number__decimal-part {
     --decimal-part: max(var(--decimal) - 0.5, 0);
 
-    transition: --decimal v-bind(transition);
+    transition: --decimal var(--transition);
 
     counter-reset: decimal-part var(--decimal-part);
 
