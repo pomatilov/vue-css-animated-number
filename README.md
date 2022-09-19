@@ -16,17 +16,17 @@ npm i vue-css-animated-number
 
 ```vue
 <template>
-    <div id="app">
-        <AnimatedNumber
-            v-model="decimalNumber"
-            class="animated-number"
-            :precision="2"
-        />
+  <div id="app">
+    <AnimatedNumber
+      v-model="decimalNumber"
+      class="animated-number"
+      :precision="2"
+    />
 
-        <button type="button" @click="onButtonSetNewValueClick">
-            Set new value
-        </button>
-    </div>
+    <button type="button" @click="onButtonSetNewValueClick">
+      Set new value
+    </button>
+  </div>
 </template>
 
 <script>
