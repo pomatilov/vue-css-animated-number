@@ -8,8 +8,8 @@
     <span
       class="animated-number__integer-part"
       :style="{
-        '--number': isBiggerOrEqualMillion ? modulo : animatedNumber,
-        '--transition': transition,
+        '--css-an-number': isBiggerOrEqualMillion ? modulo : animatedNumber,
+        '--css-an-transition': transition,
       }"
     />
 
@@ -21,7 +21,7 @@
     <span
       v-if="precision > 0"
       class="animated-number__decimal-part"
-      :style="{ '--decimal': decimalPart, '--transition': transition }"
+      :style="{ '--css-an-decimal': decimalPart, '--css-an-transition': transition }"
     />
 
     <slot />

@@ -2,7 +2,7 @@
   <div class="animated-number">
     <span
       class="animated-number__integer-part"
-      :style="{ '--number': animatedNumber, '--transition': transition }"
+      :style="{ '--css-an-number': animatedNumber, '--css-an-transition': transition }"
     />
 
     <span
@@ -13,7 +13,7 @@
     <span
       v-if="precision > 0"
       class="animated-number__decimal-part"
-      :style="{ '--decimal': decimalPart, '--transition': transition }"
+      :style="{ '--css-an-decimal': decimalPart, '--css-an-transition': transition }"
     />
 
     <slot />
@@ -92,13 +92,13 @@ export default {
 </script>
 
 <style lang="css">
-@property --number {
+@property --css-an-number {
   syntax: "<number>";
   initial-value: 0;
   inherits: false;
 }
 
-@property --decimal {
+@property --css-an-decimal {
   syntax: "<number>";
   initial-value: 0;
   inherits: false;
@@ -114,26 +114,26 @@ export default {
   }
 
   .animated-number__integer-part {
-    --integer-part: max(var(--number) - 0.5, 0);
+    --css-an-integer-part: max(var(--css-an-number) - 0.5, 0);
 
-    transition: --number var(--transition);
+    transition: --css-an-number var(--css-an-transition);
 
-    counter-reset: integer-part var(--integer-part);
+    counter-reset: css-an-integer-counter var(--css-an-integer-part);
 
     &::before {
-      content: counter(integer-part);
+      content: counter(css-an-integer-counter);
     }
   }
 
   .animated-number__decimal-part {
-    --decimal-part: max(var(--decimal) - 0.5, 0);
+    --css-an-decimal-part: max(var(--css-an-decimal) - 0.5, 0);
 
-    transition: --decimal var(--transition);
+    transition: --css-an-decimal var(--css-an-transition);
 
-    counter-reset: decimal-part var(--decimal-part);
+    counter-reset: css-an-decimal-counter var(--css-an-decimal-part);
 
     &::before {
-      content: counter(decimal-part, decimal-leading-zero);
+      content: counter(css-an-decimal-counter, decimal-leading-zero);
     }
   }
 }
