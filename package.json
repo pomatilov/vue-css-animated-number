@@ -16,7 +16,7 @@
   "scripts": {
     "serve-demo": "vue-cli-service serve ./demo/main.js",
     "build-demo": "vue-cli-service build --dest dist/demo ./demo/main.js",
-    "build-lib": "vue-cli-service build --target lib --name vue-css-animated-number --dest dist/lib ./src/AnimatedNumber.vue && rm -rf ./dist/demo.html",
+    "build-lib": "vue-cli-service build --target lib --name vue-css-animated-number --dest dist/lib ./src/AnimatedNumber.vue && rm -rf ./dist/lib/demo.html",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
