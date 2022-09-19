@@ -8,6 +8,8 @@ But it can be extended to MAX_SAFE_INTEGER with self-imported component (check /
 
 ## Install
 
+Vue 2:
+
 ```sh
 npm i vue-css-animated-number
 ```
