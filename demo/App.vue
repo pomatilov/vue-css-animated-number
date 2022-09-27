@@ -140,16 +140,31 @@ export default {
   },
 
   data: () => ({
-    integerNumber: 520,
-    roundedIntegerNumber: 49.85,
-    decimalNumber: 340.689,
-    roundedDecimalNumber: 147.0,
+    integerNumber: 0,
+    roundedIntegerNumber: 0,
+    decimalNumber: 0,
+    roundedDecimalNumber: 0,
 
-    priceWithoutDiscount: 162.54,
-    priceWithDiscount: 130.25,
+    priceWithoutDiscount: 0,
+    priceWithDiscount: 0,
 
-    bigIntegerNumber: Number.MAX_SAFE_INTEGER,
+    bigIntegerNumber: 0,
   }),
+
+  mounted() {
+    const vm = this;
+    setTimeout(() => {
+      vm.integerNumber = 520;
+      vm.roundedIntegerNumber = 49.85;
+      vm.decimalNumber = 340.689;
+      vm.roundedDecimalNumber = 147.0;
+
+      vm.priceWithoutDiscount = 162.54;
+      vm.priceWithDiscount = 130.25;
+
+      vm.bigIntegerNumber = Number.MAX_SAFE_INTEGER;
+    }, 1000);
+  },
 };
 </script>
 
