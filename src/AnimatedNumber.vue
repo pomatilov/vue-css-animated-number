@@ -88,6 +88,30 @@ export default {
       },
     },
   },
+
+  created() {
+    if (typeof window?.CSS?.registerProperty === 'function') {
+      try {
+        window.CSS.registerProperty({
+          name: '--css-an-number',
+          syntax: '<number>',
+          inherits: false,
+          initialValue: 0,
+        });
+
+        window.CSS.registerProperty({
+          name: '--css-an-decimal',
+          syntax: '<number>',
+          inherits: false,
+          initialValue: 0,
+        });
+      } catch (e) {
+        if (e instanceof DOMException) {
+          console.log(e.message);
+        }
+      }
+    }
+  },
 };
 </script>
 

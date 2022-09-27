@@ -1,10 +1,11 @@
 # vue-css-animated-number
 
-A simple component that animate number using [CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters)
+A simple component that animate number using [CSS counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters) and [@property](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)
 
-Maximum integer number is 999,999, cause after that variables uses exponent
+Notes:
 
-But it can be extended to MAX_SAFE_INTEGER with self-imported component (check /examples/AnimatedBigNumber.vue) 
+1. **@property has problems with compatibility**. Check browser compatibility on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@property#browser_compatibility)
+2. **Maximum integer is 999 999**, cause after that variables uses exponent. Sometimes it can broke animation, but number can be extended to MAX_SAFE_INTEGER with self-imported component (check /examples/AnimatedBigNumber.vue) 
 
 ## Install
 
